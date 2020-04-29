@@ -6,6 +6,24 @@ class MapContainer extends Component {
         lat: 27.271707,
         lng: -81.205376
     }
+    
+    styles = {
+        container: {
+            width: '50vw',
+            height: '75vh',
+            margin: '10vh 2.5vw 10vh 5vw',
+            position: 'static',
+        }
+    }
+
+    styles = {
+        map: {
+            width: '50vw',
+            height: '75vh',
+            margin: '10vh 2.5vw 10vh 5vw',
+            position: 'static',
+        }
+    }
 
     componentDidMount = () => {
         const { lat, lng } = this.state;
@@ -27,6 +45,18 @@ class MapContainer extends Component {
         this.setState({lat, lng}) 
     }
 
+    handleClick = () => {
+        const { getWebcam } = this.props;
+        //here: handle the choice of cam when clicking on map/marker
+    }
+
+    // TESTING PURPOSE ONLY: DELETE ME WHEN handleclick is working
+    componentDidMount = () => {
+        const { getWebcam } = this.props;
+        getWebcam('1417428169')
+    }
+    // TESTING PURPOSE ONLY: DELETE ME WHEN handleclick is working
+
     render(){
         const { lat, lng } = this.state;
         const { webcams } = this.props;
@@ -34,6 +64,8 @@ class MapContainer extends Component {
 
         return(
             <Map
+                style={this.styles.map}
+                containerStyle={this.styles.map}
                 google={this.props.google}
                 zoom={7}
                 initialCenter={{ lat: lat, lng: lng}}

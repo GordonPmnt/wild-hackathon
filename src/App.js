@@ -2,11 +2,33 @@ import React from 'react';
 import axios from 'axios';
 import { config } from './config';
 import MapContainer from './components/MapContainer';
-import WindyCam from './components/WindyCam'
+import SideBar from './components/SideBar'
 
 class App extends React.Component {
   state = {
-    webcams: []
+    webcams: [],
+    choosenCam: {}
+  }
+  
+  styles = {
+    container: {
+      display: 'inline-block',
+      height: '100vh',
+      width: '100vw',
+    }
+  }
+  
+  state = {
+    webcams: [],
+    choosenCam: {}
+  }
+  
+  styles = {
+    container: {
+      display: 'inline-block',
+      height: '100vh',
+      width: '100vw',
+    }
   }
 
   getNearbyWebcams = ({ lat, lng, radius }) => {
@@ -37,18 +59,28 @@ class App extends React.Component {
       `${baseUrl}/${webcamRef}?show=webcams:location,image,player&key=${config.API_KEY_WINDY}`
     )
     .then(
-      response => console.log(response.data)
+      response => this.setState({choosenCam: response.data.result.webcams[0]})
     )
+    .catch(error => console.log(error))
+  }
+
+  componentDidMount = () => {
+    this.getWebcam("1576343988")
   }
 
   render () {
+    const { webcams, choosenCam } = this.state;
+
     return (
-      <div>
-        <MapContainer 
+      <div style={this.styles.container}>
+        <MapContainer
           getNearbyWebcams={this.getNearbyWebcams}
-          webcams={this.state.webcams}
+          getWebcam={this.getWebcam}
+          webcams={webcams}
         />
-        <WindyCam />
+        <SideBar  
+          choosenCam={choosenCam}
+        />
       </div>
     );
   }
