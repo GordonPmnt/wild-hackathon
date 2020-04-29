@@ -63,7 +63,7 @@ class MapContainer extends Component {
 
     render(){
 
-        const { lat, lng } = this.state;
+        const { lat, lng } = this.state.latLng;
         const { webcams, postcardView } = this.props;
 
         console.log(webcams)
