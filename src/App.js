@@ -62,13 +62,10 @@ class App extends React.Component {
       response => this.setState({choosenCam: response.data.result.webcams[0]})
     )
     .catch(error => console.log(error))
-<<<<<<< HEAD
   }
 
   componentDidMount = () => {
     this.getWebcam("1576343988")
-=======
->>>>>>> ad4ce3bcfebef8b32de2bbc26a8c35b8301e9bf6
   }
 
   render () {
