@@ -9,23 +9,17 @@ class MapContainer extends Component {
         }
     }
 
-    componentDidMount = () => {
-
-    }
-
-
     render(){
         return(
             <Map
           google={this.props.google}
-          zoom={8}
-          style={mapStyles}
-          initialCenter={{ lat: 47.444, lng: -122.176}}
+          zoom={10}
+          initialCenter={{ lat: 25.5584, lng: -80.4582}}
         />
         )
     }
 }
 
 export default GoogleApiWrapper({
-    apiKey: AIzaSyDreN_7L3Dv43IkI1jd2t7YBr0I9yCpWkM
+    apiKey: 'AIzaSyDreN_7L3Dv43IkI1jd2t7YBr0I9yCpWkM'
 })(MapContainer)
