@@ -31,10 +31,10 @@ const WindyCam = ({ choosenCam, postcardView }) => {
         <>
         {choosenCam.player 
             ?
-                <div style={postcardView ? styles.full : {}}>
-                    <h2 style={styles.h2}>{location.city}</h2>
+                <div>
+                    {postcardView || <h2 style={styles.h2}>{location.city}</h2>}
                     <iframe 
-                        style={postcardView ? {} : styles.cam}
+                        style={postcardView ? styles.full : styles.cam}
                         id={id}
                         title={location.city}
                         src={player.day.embed}
@@ -42,12 +42,12 @@ const WindyCam = ({ choosenCam, postcardView }) => {
                     />
                 </div>
             :
-                <div style={postcardView ? styles.full : {}}>
-                    <h2 style={styles.h2}>CHOOSE A LOCATION</h2>
+                <div>
+                    {postcardView || <h2 style={styles.h2}>CHOOSE A LOCATION</h2>}
                     <img 
                         src={beach} 
                         alt="beach"
-                        style={postcardView ? {} : styles.cam}
+                        style={postcardView ? styles.full : styles.cam}
                     />
                 </div>
         }
