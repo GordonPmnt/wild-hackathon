@@ -35,7 +35,7 @@ class MapContainer extends Component {
     // TESTING PURPOSE ONLY: DELETE ME WHEN handleclick is working
     componentDidMount = () => {
         const { getWebcam } = this.props;
-        getWebcam('1576343988')
+        getWebcam('1417428169')
     }
     // TESTING PURPOSE ONLY: DELETE ME WHEN handleclick is working
 
