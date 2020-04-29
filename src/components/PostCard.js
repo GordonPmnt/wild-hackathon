@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import { config } from './config';
-import MapContainer from './components/MapContainer';
-import SideBar from './components/SideBar'
+import { config } from '../config';
+import MapContainer from './MapContainer';
+import SideBar from './SideBar'
 
 class PostCard extends React.Component {
   state = {
