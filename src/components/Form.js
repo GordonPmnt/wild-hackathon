@@ -1,5 +1,8 @@
+
 import React, { Component } from 'react'
 import { config } from '../config'
+import Message from './Message';
+
 
 class Form extends Component {
       state = {
@@ -37,6 +40,7 @@ class Form extends Component {
               {postcardView ? "Back to map" : "Switch to postcard"}
             </div>
           </form>
+         
         );
       }
     }
