@@ -46,7 +46,6 @@ class App extends React.Component {
   }
 
   componentDidMount = () => {
-    this.getNearbyWebcams({ lat: 42.44, lng: 3.14, radius: 200 }) //for test purpose only
     this.getWebcam("1576343988")                                  //for test purpose only
   }
 
