@@ -9,9 +9,9 @@ class MapContainer extends Component {
 
     styles = {
         container: {
-            width: '60vw',
-            height: '80vh',
-            margin: '10vh 2.5vw 10vh 2.5vw',
+            width: '50vw',
+            height: '75vh',
+            margin: '10vh 2.5vw 10vh 5vw',
             position: 'static',
         }
     }
