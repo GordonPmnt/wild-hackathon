@@ -8,7 +8,7 @@ class MapContainer extends Component {
     }
 
     styles = {
-        container: {
+        map: {
             width: '50vw',
             height: '75vh',
             margin: '10vh 2.5vw 10vh 5vw',
@@ -30,7 +30,8 @@ class MapContainer extends Component {
 
         return(
             <Map
-                style={this.styles.container} 
+                style={this.styles.map}
+                containerStyle={this.styles.map}
                 google={this.props.google}
                 zoom={10}
                 initialCenter={{ lat: lat, lng: lng}}

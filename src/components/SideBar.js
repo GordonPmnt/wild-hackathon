@@ -6,9 +6,12 @@ import Form from './Form';
 const SideBar = () => {
     const styles = {
         container: {
+            position: 'absolute',
             height: '80vh',
             width: '30vw',
-            margin: '10vh 2.5vw 10vh 60vw',
+            margin: '0',
+            top: '5vh',
+            right: '2.5vw'
         },
     }
 
