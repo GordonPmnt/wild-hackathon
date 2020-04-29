@@ -6,8 +6,13 @@ const WindyCam = ({ choosenCam, postcardView }) => {
     const styles = {
         cam: {
             width: '100%',
-            height: postcardView ? '100%' : '225px',
+            height: '225px',
             borderRadius: '10px',
+            border: 'none',
+        },
+        full: {
+            width: '100vw',
+            height: '100vh',
             border: 'none',
         },
         h2: {
@@ -26,10 +31,10 @@ const WindyCam = ({ choosenCam, postcardView }) => {
         <>
         {choosenCam.player 
             ?
-                <div>
+                <div style={postcardView ? styles.full : {}}>
                     <h2 style={styles.h2}>{location.city}</h2>
                     <iframe 
-                        style={styles.cam}
+                        style={postcardView ? {} : styles.cam}
                         id={id}
                         title={location.city}
                         src={player.day.embed}
@@ -37,12 +42,12 @@ const WindyCam = ({ choosenCam, postcardView }) => {
                     />
                 </div>
             :
-                <div>
+                <div style={postcardView ? styles.full : {}}>
                     <h2 style={styles.h2}>CHOOSE A LOCATION</h2>
                     <img 
                         src={beach} 
                         alt="beach"
-                        style={styles.cam}
+                        style={postcardView ? {} : styles.cam}
                     />
                 </div>
         }

@@ -22,6 +22,16 @@ class Form extends Component {
           border: 'none',
           height: '150px',
           width: '350px',
+        },
+        cornerButton: {
+          border: `solid 2px ${config.colors.pinkMexican}`,
+          borderRadius: '5px',
+          padding: '5px 20px 5px 20px',
+          cursor: 'pointer',
+          textAlign: 'center',
+          position: 'absolute',
+          top: '5vh',
+          right: '5vw'
         }
       }
 
@@ -48,7 +58,7 @@ class Form extends Component {
             }
             <div 
               className="button"
-              style={this.styles.button}
+              style={postcardView ? this.styles.cornerButton : this.styles.button}
               onClick={() => toggleView()}
             >
               {postcardView ? "Back to map" : "Switch to postcard"}
