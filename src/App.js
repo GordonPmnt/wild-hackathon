@@ -16,6 +16,14 @@ class App extends React.Component {
   state = {
     webcams: []
   }
+  
+  styles = {
+    container: {
+      display: 'inline-block',
+      height: '100vh',
+      width: '100vw',
+    }
+  }
 
   getNearbyWebcams = ({ lat, lng, radius }) => {
     const baseUrl = 'https://api.windy.com/api/webcams/v2/list'

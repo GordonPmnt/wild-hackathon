@@ -6,6 +6,15 @@ class MapContainer extends Component {
         lat: 25.5584,
         lng: -80.4582
     }
+    
+    styles = {
+        container: {
+            width: '60vw',
+            height: '80vh',
+            margin: '10vh 2.5vw 10vh 2.5vw',
+            position: 'static',
+        }
+    }
 
     styles = {
         map: {
