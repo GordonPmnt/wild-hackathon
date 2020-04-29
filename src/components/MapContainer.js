@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 
 class MapContainer extends Component {
     state = {
@@ -29,6 +29,10 @@ class MapContainer extends Component {
         const { lat, lng } = this.state;
         const { getNearbyWebcams } = this.props;
         getNearbyWebcams({ lat: lat, lng: lng, radius: 200 })
+
+        // TESTING PURPOSE ONLY: DELETE ME WHEN handleclick is working
+        //const { getWebcam } = this.props;
+        // getWebcam('1417428169')
     }
 
     componentDidUpdate = (prevProps, prevState) => {
@@ -45,16 +49,12 @@ class MapContainer extends Component {
         this.setState({lat, lng}) 
     }
 
-    handleClick = () => {
+    handleClick = (camId) => {
         const { getWebcam } = this.props;
         //here: handle the choice of cam when clicking on map/marker
+        getWebcam(camId)
     }
 
-    // TESTING PURPOSE ONLY: DELETE ME WHEN handleclick is working
-    componentDidMount = () => {
-        const { getWebcam } = this.props;
-        getWebcam('1417428169')
-    }
     // TESTING PURPOSE ONLY: DELETE ME WHEN handleclick is working
 
     render(){
@@ -83,8 +83,13 @@ class MapContainer extends Component {
                             url: 'https://img.icons8.com/plasticine/2x/marker.png',
                             scaledSize: new this.props.google.maps.Size(64,64)
                         }}
-                        onClick={this.handleClick}
-                    />)
+                        onClick={() => this.handleClick(cam.id)}
+                    >
+                        <InfoWindow>
+                            <p>test</p>
+                        </InfoWindow>
+                    </Marker>
+                    )
                 }
             </Map>
         )
