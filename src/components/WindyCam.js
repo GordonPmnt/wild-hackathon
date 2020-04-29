@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const WindyCam = () => {
+const WindyCam = ({ choosenCam }) => {
     const styles = {
         cam: {
             width: '100%',
