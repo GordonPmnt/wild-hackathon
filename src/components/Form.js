@@ -34,7 +34,7 @@ class Form extends Component {
             <div style={this.styles.button}
               onClick={() => toggleView()}
             >
-              {postcardView ? "Back to map" : "Generate postcard"}
+              {postcardView ? "Back to map" : "Switch to postcard"}
             </div>
           </form>
         );

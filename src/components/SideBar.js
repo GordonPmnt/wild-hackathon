@@ -8,7 +8,7 @@ const SideBar = ({ choosenCam, toggleView, postcardView }) => {
         container: {
             position: 'absolute',
             height: '80vh',
-            width: '30vw',
+            width: postcardView ? '90vw' : '30vw',
             margin: '0',
             top: '10vh',
             right: '5vw'
