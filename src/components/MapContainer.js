@@ -1,10 +1,16 @@
 import React, { Component } from "react";
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 
 class MapContainer extends Component {
     state = {
-        lat: 27.271707,
-        lng: -81.205376
+        latLng:{
+            lat: 27.271707,
+            lng: -81.205376
+        },
+        selectedPlace: "",
+        activeMarker: "",
+        showingInfoWindow: true,
+        webcams: this.props.webcams
     }
     
     styles = {
@@ -17,40 +23,49 @@ class MapContainer extends Component {
     }
 
     componentDidMount = () => {
-        const { lat, lng } = this.state;
+        const { lat, lng } = this.state.latLng;
         const { getNearbyWebcams } = this.props;
         getNearbyWebcams({ lat: lat, lng: lng, radius: 200 })
+        
+        // TESTING PURPOSE ONLY: DELETE ME WHEN handleclick is working
+        //const { getWebcam } = this.props;
+        // getWebcam('1417428169')
     }
 
     componentDidUpdate = (prevProps, prevState) => {
-        if(this.state !== prevState){
-            const { lat, lng } = this.state;
+        if(this.state.latLng !== prevState.latLng){
+            const { lat, lng } = this.state.latLng;
             const { getNearbyWebcams } = this.props;
-            getNearbyWebcams({ lat: lat, lng: lng, radius: 400 })
+            getNearbyWebcams({ lat: lat, lng: lng, radius: 400 })      
         }
     }
 
     handleDrag = (mapProps, map) => {
         const lat = map.center.lat();
         const lng = map.center.lng()
-        this.setState({lat, lng}) 
+        this.setState({latLng:{lat, lng}}) 
     }
 
-    handleClick = () => {
+    handleClick = (camId) => {
         const { getWebcam } = this.props;
         //here: handle the choice of cam when clicking on map/marker
+        getWebcam(camId)
     }
 
-    // TESTING PURPOSE ONLY: DELETE ME WHEN handleclick is working
-    componentDidMount = () => {
-        const { getWebcam } = this.props;
-        getWebcam('1417428169')
-    }
-    // TESTING PURPOSE ONLY: DELETE ME WHEN handleclick is working
+    // ToDo : fix over display ((re)rendering issue)
+    /* handleMouseOver = (props, marker, e) => {
+        this.setState({
+            selectedPlace: props,
+            activeMarker: marker,
+            showingInfoWindow: true
+        })
+    } */
 
     render(){
+
         const { lat, lng } = this.state;
         const { webcams, postcardView } = this.props;
+
         console.log(webcams)
 
         return( postcardView ||
@@ -70,9 +85,20 @@ class MapContainer extends Component {
                                 lat: cam.location.latitude, 
                                 lng: cam.location.longitude
                             }}
-                        onClick={this.handleClick}
-                    />)
+                        icon={{
+                            url: 'https://img.icons8.com/plasticine/2x/marker.png',
+                            scaledSize: new this.props.google.maps.Size(64,64)
+                        }}
+                        onClick={() => this.handleClick(cam.id)}
+                        // onMouseover={(props, marker, e) => this.handleMouseOver(props, marker, e)}
+                    />
+                    )
                 }
+                <InfoWindow
+                    marker={this.state.activeMarker}
+                    visible={this.state.showingInfoWindow} >
+                    <p>test</p>
+                </InfoWindow>
             </Map>
         )
     }
