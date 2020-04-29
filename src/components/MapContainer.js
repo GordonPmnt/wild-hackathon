@@ -79,6 +79,10 @@ class MapContainer extends Component {
                                 lat: cam.location.latitude, 
                                 lng: cam.location.longitude
                             }}
+                        icon={{
+                            url: 'https://img.icons8.com/plasticine/2x/marker.png',
+                            scaledSize: new this.props.google.maps.Size(64,64)
+                        }}
                         onClick={this.handleClick}
                     />)
                 }
