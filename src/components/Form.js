@@ -12,9 +12,6 @@ border: `solid 2px ${config.colors.pinkMexican}`
 
 
 class Form extends Component {
-      state = {
-        value: ''
-      };
 
       styles = {
         button: {
@@ -25,10 +22,7 @@ class Form extends Component {
         }
       }
 
-      handleChange = event => {
-        this.setState({value: event.target.value});
-      }
-
+     
       render() {
         const { toggleView, postcardView } = this.props;
         console.log(postcardView)
@@ -37,8 +31,8 @@ class Form extends Component {
           <form>
             <label>
               <textarea style = {formStyle}
-                value={this.state.value} 
-                onChange={this.handleChange}
+                value={this.props.value} 
+                onChange={this.props.handleChange}
               />
             </label>
             <div style={this.styles.button}
