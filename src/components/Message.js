@@ -1,15 +1,14 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-const messageStyle = {
-    height: "100vh",
-}
 
-class Message extends Component {
-    render(){
+
+const Message = ()=> {
+    
      return(
-         <div style = {messageStyle}>  </div>
+         <div>  
+         <p>ALLONS SEULEMENT</p>
+         </div>
      );
-}
 }
 
 

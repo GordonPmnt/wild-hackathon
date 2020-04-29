@@ -1,38 +1,28 @@
-import React from 'react'
-
-
+import React, {Component} from 'react'
 class Form extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          value: 'Écrivez un essai à propos de votre élément du DOM préféré'
+          value: ''
         };
-    
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
       }
-    
-      handleChange(event) {
+      handleChange = (event) => {
+        console.log("yo")
         this.setState({value: event.target.value});
       }
-    
-      handleSubmit(event) {
+      handleSubmit = (event) => {
         alert('Un essai a été envoyé : ' + this.state.value);
         event.preventDefault();
       }
-    
       render() {
         return (
           <form onSubmit={this.handleSubmit}>
             <label>
-              Essay:
               <textarea value={this.state.value} onChange={this.handleChange} />
             </label>
-            <button onClick={this.handleSubmit.bind(this)}>Send</button>
+            <button type="submit">Send</button>
           </form>
-       
         );
       }
     }
-    
 export default Form;
