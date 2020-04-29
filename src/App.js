@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { config } from './config';
-import Map from './components/Map';
+import MapContainer from './components/MapContainer';
 
 class App extends React.Component {
 
@@ -33,7 +33,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <Map 
+        <MapContainer 
           getNearbyWebcams={this.getNearbyWebcams}
         />
       </div>
