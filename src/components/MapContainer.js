@@ -21,13 +21,15 @@ class MapContainer extends Component {
 
     render(){
         const { lat, lng } = this.state;
+        const { getNearbyWebcams } = this.props;
+
         return(
             <Map
-          google={this.props.google}
-          zoom={10}
-          initialCenter={{ lat: lat, lng: lng}}
-          onDragend={e => this.handleDrag(e.google.maps)}
-        />
+                google={this.props.google}
+                zoom={10}
+                initialCenter={{ lat: lat, lng: lng}}
+                onDragend={e => this.handleDrag(e.google.maps)}
+            />
         )
     }
 }

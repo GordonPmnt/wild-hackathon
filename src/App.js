@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { config } from './config';
 import MapContainer from './components/MapContainer';
+import WindyCam from './components/WindyCam'
 
 class App extends React.Component {
 
@@ -49,6 +50,7 @@ class App extends React.Component {
         <MapContainer 
           getNearbyWebcams={this.getNearbyWebcams}
         />
+        <WindyCam />
       </div>
     );
   }
