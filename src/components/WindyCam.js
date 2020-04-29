@@ -11,18 +11,27 @@ const WindyCam = ({ choosenCam }) => {
     }
 
     const { id, location, player } = choosenCam
+    const beach = require('../img/beach.jpg')
+
     console.log('CAM', choosenCam)
 
     return (
         <>
-        {choosenCam.player &&
-            <iframe 
-                style={styles.cam}
-                id={id}
-                title={location.city}
-                src={player.day.embed}
-                allowFullScreen={false}
-            />
+        {choosenCam.player 
+            ?
+                <iframe 
+                    style={styles.cam}
+                    id={id}
+                    title={location.city}
+                    src={player.day.embed}
+                    allowFullScreen={false}
+                />
+            :
+                <img 
+                    src={beach} 
+                    alt="beach"
+                    style={styles.cam}
+                />
         }
         </>
     )
