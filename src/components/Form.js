@@ -1,33 +1,30 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 class Form extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          value: ''
-        };
-      }
+      state = {
+        value: ''
+      };
 
-      handleChange = (event) => {
-        console.log("yo")
+      handleChange = event => {
         this.setState({value: event.target.value});
       }
 
-      handleSubmit = (event) => {
-        alert('Un essai a été envoyé : ' + this.state.value);
-        event.preventDefault();
-      }
-
       render() {
+        const { toggleView } = this.props;
+
         return (
-          <form onSubmit={this.handleSubmit}>
+          <form>
             <label>
               <textarea 
                 value={this.state.value} 
                 onChange={this.handleChange}
               />
             </label>
-            <button type="submit">Send</button>
+            <button
+              onClick={() => toggleView()}
+            >
+              Generate postcard
+            </button>
           </form>
         );
       }

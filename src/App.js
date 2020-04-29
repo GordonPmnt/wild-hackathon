@@ -7,7 +7,8 @@ import SideBar from './components/SideBar'
 class App extends React.Component {
   state = {
     webcams: [],
-    choosenCam: {}
+    choosenCam: {},
+    postcardView: false,
   }
   
   styles = {
@@ -51,6 +52,12 @@ class App extends React.Component {
     .catch(error => console.log(error))
   }
 
+  toggleView = () => {
+    this.setState(prevState => ({
+      chatEnabled: !prevState.postcardView
+  }))
+  }
+
   render () {
     const { webcams, choosenCam } = this.state;
 
@@ -63,6 +70,7 @@ class App extends React.Component {
         />
         <SideBar  
           choosenCam={choosenCam}
+          toggleView={this.toggleView}
         />
       </div>
     );

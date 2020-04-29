@@ -21,7 +21,7 @@ const WindyCam = ({ choosenCam }) => {
                 id={id}
                 title={location.city}
                 src={player.day.embed}
-                allowfullscreen={'false'}
+                allowFullScreen={false}
             />
         }
         </>
