@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const WindyCam = ({ style }) => {
+const WindyCam = () => {
 
     return (
         <div>
