@@ -97,7 +97,7 @@ class MapContainer extends Component {
                             scaledSize: new this.props.google.maps.Size(64,64)
                         }}
                         onClick={() => this.handleClick(cam.id)}
-                        onMouseover={(props, marker, e) => this.handleMouseOver(props, marker, e)}
+                        // onMouseover={(props, marker, e) => this.handleMouseOver(props, marker, e)}
                     />
                     )
                 }
