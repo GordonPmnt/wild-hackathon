@@ -13,7 +13,7 @@ class App extends React.Component {
 
     axios
     .get(
-      `${baseUrl}/${location}/${property}/${limit}?key=${config.API_KEY_WINDY}`
+      `${baseUrl}/${location}/${property}/${limit}?show=webcams:location,image&key=${config.API_KEY_WINDY}`
     )
     .then(
       response => {
