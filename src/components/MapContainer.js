@@ -2,11 +2,17 @@ import React, { Component } from "react";
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 
 class MapContainer extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            lat: 25.5584,
-            lng: -80.4582
+    state = {
+        lat: 25.5584,
+        lng: -80.4582
+    }
+
+    styles = {
+        container: {
+            width: '60vw',
+            height: '80vh',
+            margin: '10vh 2.5vw 10vh 2.5vw',
+            position: 'static',
         }
     }
 
@@ -21,10 +27,10 @@ class MapContainer extends Component {
 
     render(){
         const { lat, lng } = this.state;
-        const { getNearbyWebcams } = this.props;
 
         return(
             <Map
+                style={this.styles.container} 
                 google={this.props.google}
                 zoom={10}
                 initialCenter={{ lat: lat, lng: lng}}
