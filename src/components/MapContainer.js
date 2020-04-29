@@ -14,15 +14,6 @@ class MapContainer extends Component {
     }
     
     styles = {
-        container: {
-            width: '50vw',
-            height: '75vh',
-            margin: '10vh 2.5vw 10vh 5vw',
-            position: 'static',
-        }
-    }
-
-    styles = {
         map: {
             width: '50vw',
             height: '75vh',
@@ -71,11 +62,13 @@ class MapContainer extends Component {
     } */
 
     render(){
-        const { lat, lng } = this.state.latLng;
-        const { webcams } = this.props;
+
+        const { lat, lng } = this.state;
+        const { webcams, postcardView } = this.props;
+
         console.log(webcams)
 
-        return(
+        return( postcardView ||
             <Map
                 style={this.styles.map}
                 containerStyle={this.styles.map}

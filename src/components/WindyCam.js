@@ -5,8 +5,8 @@ const WindyCam = ({ choosenCam }) => {
     const styles = {
         cam: {
             width: '100%',
-            height: '50%',
-            borderRadius: '15px',
+            height: '55%',
+            borderRadius: '10px',
         }
     }
 
@@ -21,6 +21,7 @@ const WindyCam = ({ choosenCam }) => {
                 id={id}
                 title={location.city}
                 src={player.day.embed}
+                allowFullScreen={false}
             />
         }
         </>

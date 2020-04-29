@@ -1,33 +1,41 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
+import { config } from '../config'
 
 class Form extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          value: ''
-        };
+      state = {
+        value: ''
+      };
+
+      styles = {
+        button: {
+          border: `solid 2px ${config.colors.pinkMexican}`,
+          borderRadius: '5px',
+          padding: '5px',
+          cursor: 'pointer',
+        }
       }
 
-      handleChange = (event) => {
-        console.log("yo")
+      handleChange = event => {
         this.setState({value: event.target.value});
       }
 
-      handleSubmit = (event) => {
-        alert('Un essai a été envoyé : ' + this.state.value);
-        event.preventDefault();
-      }
-
       render() {
+        const { toggleView, postcardView } = this.props;
+        console.log(postcardView)
+
         return (
-          <form onSubmit={this.handleSubmit}>
+          <form>
             <label>
               <textarea 
                 value={this.state.value} 
                 onChange={this.handleChange}
               />
             </label>
-            <button type="submit">Send</button>
+            <div style={this.styles.button}
+              onClick={() => toggleView()}
+            >
+              {postcardView ? "Back to map" : "Switch to postcard"}
+            </div>
           </form>
         );
       }

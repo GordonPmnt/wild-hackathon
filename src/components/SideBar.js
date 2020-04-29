@@ -3,15 +3,15 @@ import WindyCam from './WindyCam';
 import Form from './Form';
 
 
-const SideBar = ({ choosenCam }) => {
+const SideBar = ({ choosenCam, toggleView, postcardView }) => {
     const styles = {
         container: {
             position: 'absolute',
             height: '80vh',
-            width: '30vw',
+            width: postcardView ? '90vw' : '30vw',
             margin: '0',
-            top: '5vh',
-            right: '2.5vw'
+            top: '10vh',
+            right: '5vw'
         },
     }
 
@@ -20,7 +20,10 @@ const SideBar = ({ choosenCam }) => {
             <WindyCam
                 choosenCam={choosenCam}
             />
-            <Form />
+            <Form
+                toggleView={toggleView}
+                postcardView={postcardView}
+            />
         </div>
     )
 }
