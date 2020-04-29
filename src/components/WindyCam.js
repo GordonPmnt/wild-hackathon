@@ -1,11 +1,11 @@
 import React from 'react';
 
 
-const WindyCam = ({ choosenCam }) => {
+const WindyCam = ({ choosenCam, postcardView }) => {
     const styles = {
         cam: {
             width: '100%',
-            height: '55%',
+            height: postcardView ? '70vh' : '40vh',
             borderRadius: '10px',
         }
     }
@@ -19,19 +19,25 @@ const WindyCam = ({ choosenCam }) => {
         <>
         {choosenCam.player 
             ?
-                <iframe 
-                    style={styles.cam}
-                    id={id}
-                    title={location.city}
-                    src={player.day.embed}
-                    allowFullScreen={false}
-                />
+                <div>
+                    <h2>{location.city}</h2>
+                    <iframe 
+                        style={styles.cam}
+                        id={id}
+                        title={location.city}
+                        src={player.day.embed}
+                        allowFullScreen={false}
+                    />
+                </div>
             :
-                <img 
-                    src={beach} 
-                    alt="beach"
-                    style={styles.cam}
-                />
+                <div>
+                    <h2>Choose a location</h2>
+                    <img 
+                        src={beach} 
+                        alt="beach"
+                        style={styles.cam}
+                    />
+                </div>
         }
         </>
     )

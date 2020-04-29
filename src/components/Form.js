@@ -22,16 +22,19 @@ class Form extends Component {
 
       render() {
         const { toggleView, postcardView } = this.props;
-        console.log(postcardView)
 
         return (
-          <form>
-            <label>
-              <textarea 
-                value={this.state.value} 
-                onChange={this.handleChange}
-              />
-            </label>
+          <>
+            {postcardView ||
+              <form>
+                <label>
+                  <textarea 
+                    value={this.state.value} 
+                    onChange={this.handleChange}
+                  />
+                </label>
+              </form>
+            }
             <div 
               className="button"
               style={this.styles.button}
@@ -39,7 +42,7 @@ class Form extends Component {
             >
               {postcardView ? "Back to map" : "Switch to postcard"}
             </div>
-          </form>
+          </>
         );
       }
     }
