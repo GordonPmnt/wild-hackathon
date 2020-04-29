@@ -3,7 +3,7 @@ import WindyCam from './WindyCam';
 import Form from './Form';
 
 
-const SideBar = ({ choosenCam, toggleView }) => {
+const SideBar = ({ choosenCam, toggleView, postcardView }) => {
     const styles = {
         container: {
             position: 'absolute',
@@ -22,6 +22,7 @@ const SideBar = ({ choosenCam, toggleView }) => {
             />
             <Form
                 toggleView={toggleView}
+                postcardView={postcardView}
             />
         </div>
     )

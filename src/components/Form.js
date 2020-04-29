@@ -10,7 +10,8 @@ class Form extends Component {
       }
 
       render() {
-        const { toggleView } = this.props;
+        const { toggleView, postcardView } = this.props;
+        console.log(postcardView)
 
         return (
           <form>
@@ -23,7 +24,7 @@ class Form extends Component {
             <button
               onClick={() => toggleView()}
             >
-              Generate postcard
+              {postcardView ? "Back to map" : "Generate postcard"}
             </button>
           </form>
         );
