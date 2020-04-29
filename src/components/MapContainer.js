@@ -7,16 +7,19 @@ class MapContainer extends Component {
         lng: -80.4582
     }
 
-    getLatLng = () => {
-        const { lat, lng } = this.state
-        return {lat, lng}
-    }
-
-    handleDrag = (map) => {
+    componentDidMount = () => {
         const { lat, lng } = this.state;
         const { getNearbyWebcams } = this.props;
         getNearbyWebcams({ lat: lat, lng: lng, radius: 200 })
-        console.log(map)
+    }
+
+    handleDrag = (e) => {
+       
+    }
+
+    handleClick = () => {
+        
+        
     }
 
     render(){
@@ -29,9 +32,19 @@ class MapContainer extends Component {
                 google={this.props.google}
                 zoom={10}
                 initialCenter={{ lat: lat, lng: lng}}
-                onDragend={e => this.handleDrag(e.google.maps)}
+                onDragend={this.handleDrag}
             >
-                {webcams.map(cam => <Marker position={{lat: cam.location.latitude, lng: cam.location.longitude}} />)}
+                {
+                webcams.map(cam => 
+                    <Marker 
+                        key={cam.id} 
+                        position={{
+                                lat: cam.location.latitude, 
+                                lng: cam.location.longitude
+                            }}
+                        onClick={this.handleClick}
+                    />)
+                }
             </Map>
         )
     }
