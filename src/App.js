@@ -5,10 +5,13 @@ import MapContainer from './components/MapContainer';
 import SideBar from './components/SideBar'
 
 class App extends React.Component {
+<<<<<<< HEAD
   state = {
     webcams: []
   }
   
+=======
+>>>>>>> 4c896ab5af883cb9426322aef61bf8bbe209584c
   styles = {
     container: {
       display: 'inline-block',
@@ -30,7 +33,11 @@ class App extends React.Component {
     .then(
       response => {
         const { webcams } = response.data.result
+<<<<<<< HEAD
         this.setState({ webcams: [...webcams]})
+=======
+        return webcams
+>>>>>>> 4c896ab5af883cb9426322aef61bf8bbe209584c
       }
     )
     .catch(error => console.log(error))

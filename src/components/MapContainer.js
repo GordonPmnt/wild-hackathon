@@ -6,7 +6,11 @@ class MapContainer extends Component {
         lat: 25.5584,
         lng: -80.4582
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 4c896ab5af883cb9426322aef61bf8bbe209584c
     styles = {
         container: {
             width: '50vw',
@@ -29,8 +33,11 @@ class MapContainer extends Component {
 
     render(){
         const { lat, lng } = this.state;
+<<<<<<< HEAD
         const { webcams } = this.props;
         console.log(webcams)
+=======
+>>>>>>> 4c896ab5af883cb9426322aef61bf8bbe209584c
 
         return(
             <Map
