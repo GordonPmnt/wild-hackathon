@@ -1,14 +1,19 @@
 import React from 'react'
 
 const messageStyle = {
-    heigth: "100vh",
-    width: "100vh"
+    width: "460px",
+    height: "140px",
+    border: "2px solid #e91e63",
+    borderRadius: "5px",
+    
+   
 }
 
 const Message = ()=> {
     
      return(
-         <div style = {messageStyle} >  
+         <div>  
+             <p style = {messageStyle}> </p>
         
          </div>
      );

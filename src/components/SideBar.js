@@ -1,6 +1,7 @@
 import React from 'react';
 import WindyCam from './WindyCam';
 import Form from './Form';
+import Message from './Message'
 
 
 const SideBar = ({ choosenCam, toggleView, postcardView }) => {
@@ -24,6 +25,7 @@ const SideBar = ({ choosenCam, toggleView, postcardView }) => {
                 toggleView={toggleView}
                 postcardView={postcardView}
             />
+            <Message />
         </div>
     )
 }
