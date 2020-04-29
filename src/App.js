@@ -14,7 +14,8 @@ class App extends React.Component {
   }
   
   state = {
-    webcams: []
+    webcams: [],
+    choosenCam: {}
   }
   
   styles = {
@@ -53,8 +54,9 @@ class App extends React.Component {
       `${baseUrl}/${webcamRef}?show=webcams:location,image,player&key=${config.API_KEY_WINDY}`
     )
     .then(
-      response => console.log(response.data)
+      response => this.setState({choosenCam: response.data.result.webcams[0]})
     )
+    .catch(error => console.log(error))
   }
 
   componentDidMount = () => {
@@ -62,13 +64,18 @@ class App extends React.Component {
   }
 
   render () {
+    const { webcams, choosenCam } = this.state;
+
     return (
       <div style={this.styles.container}>
         <MapContainer
           getNearbyWebcams={this.getNearbyWebcams}
-          webcams={this.state.webcams}
+          getWebcam={this.getWebcam}
+          webcams={webcams}
         />
-        <SideBar />
+        <SideBar  
+          choosenCam={choosenCam}
+        />
       </div>
     );
   }

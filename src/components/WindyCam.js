@@ -11,11 +11,12 @@ const WindyCam = () => {
         },
     }
     return (
-        <div>
-            <div>
-                <p>HEY!</p>
-            </div>
-        </div>
+        <video controls width="250">
+            <source 
+                src="/media/examples/flower.webm"
+                type="video/webm"
+            />
+        </video>
     )
 }
 
