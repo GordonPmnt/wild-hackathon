@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { config } from '../config'
+import './Form.css'
 
 class Form extends Component {
       state = {
@@ -31,7 +32,9 @@ class Form extends Component {
                 onChange={this.handleChange}
               />
             </label>
-            <div style={this.styles.button}
+            <div 
+              className="button"
+              style={this.styles.button}
               onClick={() => toggleView()}
             >
               {postcardView ? "Back to map" : "Switch to postcard"}
