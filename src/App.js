@@ -9,7 +9,7 @@ class App extends React.Component {
 
     toggleView = () => {
         this.setState(prevState => ({
-        postcardView: !prevState.postcardView
+            postcardView: !prevState.postcardView
         }))
     }
 

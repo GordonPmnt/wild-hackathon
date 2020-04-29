@@ -5,6 +5,13 @@ class Form extends Component {
         value: ''
       };
 
+      styles = {
+        button: {
+          border: 'solid 1px',
+          borderRadius: '10px',
+        }
+      }
+
       handleChange = event => {
         this.setState({value: event.target.value});
       }
@@ -21,11 +28,11 @@ class Form extends Component {
                 onChange={this.handleChange}
               />
             </label>
-            <button
+            <div style={this.styles.button}
               onClick={() => toggleView()}
             >
               {postcardView ? "Back to map" : "Generate postcard"}
-            </button>
+            </div>
           </form>
         );
       }
