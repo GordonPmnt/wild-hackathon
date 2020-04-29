@@ -10,8 +10,8 @@ const SideBar = ({ choosenCam }) => {
             height: '80vh',
             width: '30vw',
             margin: '0',
-            top: '5vh',
-            right: '2.5vw'
+            top: '10vh',
+            right: '5vw'
         },
     }
 
