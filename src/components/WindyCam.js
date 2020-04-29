@@ -11,8 +11,8 @@ const WindyCam = () => {
         },
     }
     return (
-        <div style={styles.container}>
-            <div style={styles.cam}>
+        <div>
+            <div>
                 <p>HEY!</p>
             </div>
         </div>
