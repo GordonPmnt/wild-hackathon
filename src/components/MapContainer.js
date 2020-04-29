@@ -27,6 +27,18 @@ class MapContainer extends Component {
         console.log(map)
     }
 
+    handleClick = () => {
+        const { getWebcam } = this.props;
+        //here: handle the choice of cam when clicking on map/marker
+    }
+
+    // TESTING PURPOSE ONLY: DELETE ME WHEN handleclick is working
+    componentDidMount = () => {
+        const { getWebcam } = this.props;
+        getWebcam('1576343988')
+    }
+    // TESTING PURPOSE ONLY: DELETE ME WHEN handleclick is working
+
     render(){
         const { lat, lng } = this.state;
         const { webcams } = this.props;

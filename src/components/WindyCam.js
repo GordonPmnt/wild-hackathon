@@ -1,14 +1,17 @@
 import React from 'react';
 
 
-const WindyCam = () => {
+const WindyCam = ({ choosenCam }) => {
+
+    console.log('CAM', choosenCam)
 
     return (
-        <div>
-            <div>
-                <p>HEY!</p>
-            </div>
-        </div>
+        <video controls width="250">
+            <source 
+                src="/media/examples/flower.webm"
+                type="video/webm"
+            />
+        </video>
     )
 }
 
