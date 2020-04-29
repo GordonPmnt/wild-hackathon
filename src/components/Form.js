@@ -3,6 +3,13 @@ import React, { Component } from 'react'
 import { config } from '../config'
 
 
+const formStyle = {
+cursor: 'pointer',
+borderRadius: '5px',
+width: '100%',
+border: `solid 2px ${config.colors.pinkMexican}`
+}
+
 
 class Form extends Component {
       state = {
@@ -29,7 +36,7 @@ class Form extends Component {
         return (
           <form>
             <label>
-              <textarea 
+              <textarea style = {formStyle}
                 value={this.state.value} 
                 onChange={this.handleChange}
               />
