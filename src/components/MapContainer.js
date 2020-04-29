@@ -22,11 +22,15 @@ class MapContainer extends Component {
     }
 
     handleDrag = (map) => {
+        const { getNearbyWebcams } = this.props;
+        getNearbyWebcams({ lat: 42.44, lng: 3.14, radius: 200 })
         console.log(map)
     }
 
     render(){
         const { lat, lng } = this.state;
+        const { webcams } = this.props;
+        console.log(webcams)
 
         return(
             <Map

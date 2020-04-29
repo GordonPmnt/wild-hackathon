@@ -12,6 +12,10 @@ class App extends React.Component {
       width: '100vw',
     }
   }
+  
+  state = {
+    webcams: []
+  }
 
   getNearbyWebcams = ({ lat, lng, radius }) => {
     const baseUrl = 'https://api.windy.com/api/webcams/v2/list'
@@ -26,7 +30,7 @@ class App extends React.Component {
     .then(
       response => {
         const { webcams } = response.data.result
-        return webcams
+        this.setState({ webcams: [...webcams]})
       }
     )
     .catch(error => console.log(error))
@@ -46,7 +50,7 @@ class App extends React.Component {
   }
 
   componentDidMount = () => {
-    this.getWebcam("1576343988")                                  //for test purpose only
+    this.getWebcam("1576343988")
   }
 
   render () {
@@ -54,6 +58,7 @@ class App extends React.Component {
       <div style={this.styles.container}>
         <MapContainer
           getNearbyWebcams={this.getNearbyWebcams}
+          webcams={this.state.webcams}
         />
         <SideBar />
       </div>
