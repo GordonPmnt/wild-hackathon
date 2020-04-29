@@ -13,13 +13,18 @@ class MapContainer extends Component {
         getNearbyWebcams({ lat: lat, lng: lng, radius: 200 })
     }
 
-    handleDrag = (e) => {
-       
+    componentDidUpdate = (prevProps, prevState) => {
+        if(this.state !== prevState){
+            const { lat, lng } = this.state;
+            const { getNearbyWebcams } = this.props;
+            getNearbyWebcams({ lat: lat, lng: lng, radius: 200 })
+        }
     }
 
-    handleClick = () => {
-        
-        
+    handleDrag = (mapProps, map) => {
+        const lat = map.center.lat();
+        const lng = map.center.lng()
+        this.setState({lat, lng}) 
     }
 
     render(){
