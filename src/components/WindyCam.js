@@ -20,7 +20,7 @@ const WindyCam = ({ choosenCam }) => {
                 style={styles.cam}
                 id={id}
                 title={location.city}
-                src={player.live.embed}
+                src={player.day.embed}
             />
         }
         </>
