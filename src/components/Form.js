@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { config } from '../config'
 
 class Form extends Component {
       state = {
@@ -7,8 +8,10 @@ class Form extends Component {
 
       styles = {
         button: {
-          border: 'solid 1px',
-          borderRadius: '10px',
+          border: `solid 2px ${config.colors.pinkMexican}`,
+          borderRadius: '5px',
+          padding: '5px',
+          cursor: 'pointer',
         }
       }
 
