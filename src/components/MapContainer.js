@@ -2,12 +2,9 @@ import React, { Component } from "react";
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 
 class MapContainer extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            lat: 25.5584,
-            lng: -80.4582
-        }
+    state = {
+        lat: 25.5584,
+        lng: -80.4582
     }
 
     getLatLng = () => {
@@ -16,12 +13,15 @@ class MapContainer extends Component {
     }
 
     handleDrag = (map) => {
+        const { getNearbyWebcams } = this.props;
+        getNearbyWebcams({ lat: 42.44, lng: 3.14, radius: 200 })
         console.log(map)
     }
 
     render(){
         const { lat, lng } = this.state;
-        const { getNearbyWebcams } = this.props;
+        const { webcams } = this.props;
+        console.log(webcams)
 
         return(
             <Map

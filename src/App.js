@@ -5,6 +5,9 @@ import MapContainer from './components/MapContainer';
 import WindyCam from './components/WindyCam'
 
 class App extends React.Component {
+  state = {
+    webcams: []
+  }
 
   getNearbyWebcams = ({ lat, lng, radius }) => {
     const baseUrl = 'https://api.windy.com/api/webcams/v2/list'
@@ -19,8 +22,7 @@ class App extends React.Component {
     .then(
       response => {
         const { webcams } = response.data.result
-        console.log(webcams)
-        return webcams
+        this.setState({ webcams: [...webcams]})
       }
     )
     .catch(error => console.log(error))
@@ -39,16 +41,12 @@ class App extends React.Component {
     )
   }
 
-  componentDidMount = () => {
-    this.getNearbyWebcams({ lat: 42.44, lng: 3.14, radius: 200 }) //for test purpose only
-    this.getWebcam("1576343988")                                  //for test purpose only
-  }
-
   render () {
     return (
       <div>
         <MapContainer 
           getNearbyWebcams={this.getNearbyWebcams}
+          webcams={this.state.webcams}
         />
         <WindyCam />
       </div>
