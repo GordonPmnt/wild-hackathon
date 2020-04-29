@@ -50,10 +50,10 @@ class MapContainer extends Component {
 
     render(){
         const { lat, lng } = this.state;
-        const { webcams } = this.props;
+        const { webcams, postcardView } = this.props;
         console.log(webcams)
 
-        return(
+        return( postcardView ||
             <Map
                 style={this.styles.map}
                 containerStyle={this.styles.map}

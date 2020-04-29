@@ -60,6 +60,7 @@ class PostCard extends React.Component {
         <MapContainer
           getNearbyWebcams={this.getNearbyWebcams}
           getWebcam={this.getWebcam}
+          postcardView={postcardView}
           webcams={webcams}
         />
         <SideBar  
