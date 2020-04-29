@@ -7,8 +7,11 @@ import MyCam from './MyCam'
 const SideBar = ({ choosenCam, toggleView, postcardView }) => {
     const styles = {
         container: {
+            backgroundColor: 'rgba(255, 255, 255, 0.6)',
+            padding: '2.5%',
+            borderRadius: '12px',
             position: 'absolute',
-            height: '80vh',
+            height: '80%',
             width: postcardView ? '90vw' : '30vw',
             margin: '0',
             top: '10vh',

@@ -70,7 +70,6 @@ class MapContainer extends Component {
 
         return( postcardView ||
             <Map
-                style={this.styles.map}
                 containerStyle={this.styles.map}
                 google={this.props.google}
                 zoom={7}

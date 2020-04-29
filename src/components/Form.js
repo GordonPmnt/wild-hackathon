@@ -13,6 +13,15 @@ class Form extends Component {
           borderRadius: '5px',
           padding: '5px',
           cursor: 'pointer',
+          textAlign: 'center',
+          width: '100%',
+        },
+        input: {
+          margin: '5px',
+          backgroundColor: 'rgba(255, 255, 255, 0.5)',
+          border: 'none',
+          height: '150px',
+          width: '350px',
         }
       }
 
@@ -29,8 +38,10 @@ class Form extends Component {
               <form>
                 <label>
                   <textarea 
+                    style={this.styles.input}
                     value={this.state.value} 
                     onChange={this.handleChange}
+                    placeholder={'Writte your message here... :-)'}
                   />
                 </label>
               </form>
