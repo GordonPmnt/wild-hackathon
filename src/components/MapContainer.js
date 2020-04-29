@@ -3,8 +3,8 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
 class MapContainer extends Component {
     state = {
-        lat: 25.5584,
-        lng: -80.4582
+        lat: 27.271707,
+        lng: -81.205376
     }
 
     componentDidMount = () => {
@@ -17,7 +17,7 @@ class MapContainer extends Component {
         if(this.state !== prevState){
             const { lat, lng } = this.state;
             const { getNearbyWebcams } = this.props;
-            getNearbyWebcams({ lat: lat, lng: lng, radius: 200 })
+            getNearbyWebcams({ lat: lat, lng: lng, radius: 400 })
         }
     }
 
@@ -35,7 +35,7 @@ class MapContainer extends Component {
         return(
             <Map
                 google={this.props.google}
-                zoom={10}
+                zoom={7}
                 initialCenter={{ lat: lat, lng: lng}}
                 onDragend={this.handleDrag}
             >
