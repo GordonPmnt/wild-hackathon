@@ -33,7 +33,7 @@ class Form extends Component {
       }
            
       render() {
-        const { toggleView, postcardView, handleChange } = this.props;
+        const { toggleView, postcardView, handleChange, value } = this.props;
 
         return (
           <>
@@ -42,7 +42,7 @@ class Form extends Component {
                 <label>
                   <textarea 
                     style={this.styles.input}
-                    value={this.state.value} 
+                    value={value} 
                     onChange={(event) => handleChange(event)}
                     placeholder={'Writte your message here... :-)'}
                   />
@@ -54,7 +54,7 @@ class Form extends Component {
               style={postcardView ? this.styles.cornerButton : this.styles.button}
               onClick={() => toggleView()}
             >
-              {postcardView ? "Back to map" : "Switch to postcard"}
+              {postcardView ? "Back to map" : "Previsualize your postcard"}
             </div>
           </>
         );
