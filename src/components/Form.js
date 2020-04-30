@@ -55,7 +55,6 @@ class Form extends Component {
         top: '5vh',
         right: '5vw',
         width: '12%',
-        cursor: 'pointer',
         opacity: '0.90'
       },
     }
@@ -89,8 +88,8 @@ class Form extends Component {
             </div>
             {postcardView &&
             <>
-              <img src={facebook} alt="facebook" style={this.styles.stamp1} />
-              <img src={instagram} alt="instagram" style={this.styles.stamp2} />
+              <img className={"net"} src={facebook} alt="facebook" style={this.styles.stamp1} />
+              <img className={"net"} src={instagram} alt="instagram" style={this.styles.stamp2} />
               <img src={stamp} alt="stamp" style={this.styles.stamp3} />
             </>
             }
