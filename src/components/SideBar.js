@@ -2,6 +2,7 @@ import React from 'react';
 import WindyCam from './WindyCam';
 import Form from './Form';
 import Message from './Message';
+import MyCam from './MyCam'
 
 
 class SideBar extends React.Component {
@@ -32,12 +33,16 @@ class SideBar extends React.Component {
             <div style={this.styles.container}>
                 <WindyCam
                     choosenCam={choosenCam}
+                    postcardView={postcardView}
                 />
                 <Form
                     toggleView={toggleView}
                     postcardView={postcardView}
                     value={this.state.value} 
                     handleChange={this.handleChange}
+                />
+                <MyCam 
+                    postcardView={postcardView}
                 />
                 <Message 
                     handleChange={this.state.message} 
@@ -47,5 +52,4 @@ class SideBar extends React.Component {
         );
     }
 }
-
 export default SideBar;
