@@ -5,7 +5,7 @@ import Webcam from 'react-webcam';
 const  MyCam = ({ postcardView }) => {
     const styles = {
         cam: {
-            borderRadius: '50%',
+            borderRadius: '15%',
             position: 'absolute',
             width: '20%',
             right: '5vw',
