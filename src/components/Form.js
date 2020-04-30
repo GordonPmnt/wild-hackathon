@@ -28,12 +28,34 @@ class Form extends Component {
           textAlign: 'center',
           position: 'absolute',
           top: '10vh',
-          right: '5vw',
+          left: '10vw',
         },
+        stamp1: {
+          borderRadius: '100%',
+          border: `solid 2px ${config.colors.pinkMexican}`,
+          position: 'absolute',
+          top: '10vh',
+          right: '10vw',
+          width: '7%',
+          cursor: 'pointer',
+          opacity: '0.65'
+        },
+        stamp2: {
+          borderRadius: '100%',
+          border: `solid 2px ${config.colors.pinkMexican}`,
+          position: 'absolute',
+          top: '10vh',
+          right: '18vw',
+          width: '7%',
+          cursor: 'pointer',
+          opacity: '0.60'
+        }
       }
            
       render() {
         const { toggleView, postcardView, handleChange, value } = this.props;
+        const facebook = require('../img/facebook.jpg')
+        const instagram = require('../img/INSTAGRAM_01.png')
 
         return (
           <>
@@ -56,6 +78,12 @@ class Form extends Component {
             >
               {postcardView ? "Back to map" : "Previsualize your postcard"}
             </div>
+            {postcardView &&
+            <>
+              <img src={facebook} alt="facebook" style={this.styles.stamp1} />
+              <img src={instagram} alt="instagram" style={this.styles.stamp2} />
+            </>
+            }
           </>
         );
       }
