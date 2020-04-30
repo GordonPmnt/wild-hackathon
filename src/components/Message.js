@@ -23,7 +23,7 @@ const Message = ({ choosenCam, value }) => {
     return(
         <div style={styles.message}> 
             <h2 style={styles.h2}>Greetings from {location && location.city} !</h2>
-            <p>
+            <p className='message'>
                 {value}
             </p>
         </div>
