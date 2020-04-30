@@ -28,7 +28,7 @@ class Form extends Component {
           textAlign: 'center',
           position: 'absolute',
           top: '10vh',
-          left: '10vw',
+          left: '5vw',
         },
         stamp1: {
           borderRadius: '100%',

@@ -14,7 +14,7 @@ const Message = ({ choosenCam, value }) => {
             borderRadius: "5px",
             position: 'absolute',
             top: '17vh',
-            left: '10vw',
+            left: '5vw',
             padding: '20px'
         },
     };
