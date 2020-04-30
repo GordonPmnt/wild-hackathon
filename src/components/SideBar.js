@@ -1,12 +1,16 @@
 import React from 'react';
 import WindyCam from './WindyCam';
 import Form from './Form';
-import MyCam from './MyCam'
 import Message from './Message';
+import MyCam from './MyCam'
 
 
-const SideBar = ({ choosenCam, toggleView, postcardView }) => {
-    const styles = {
+class SideBar extends React.Component {
+    state = {
+        value: ''
+    };  
+
+    styles = {
         side: {
             backgroundColor: 'rgba(255, 255, 255, 0.6)',
             padding: '2.5%',
@@ -24,27 +28,38 @@ const SideBar = ({ choosenCam, toggleView, postcardView }) => {
             margin: '0',
         }
     }
+        
+    handleChange = event => {
+        this.setState({value: event.target.value});
+    }
 
-    return (
-        <div style={postcardView ? styles.full : styles.side}>
-            <WindyCam
-                choosenCam={choosenCam}
-                postcardView={postcardView}
-            />
-            <Form
-                toggleView={toggleView}
-                postcardView={postcardView}
-            />
-            <MyCam 
-                postcardView={postcardView}
-            />
-            {postcardView &&
-                <Message
+    render() {
+        const { choosenCam, toggleView, postcardView } = this.props
+        const { value } = this.state;
+
+        return (
+            <div style={postcardView ? this.styles.full : this.styles.side}>
+                <WindyCam
                     choosenCam={choosenCam}
+                    postcardView={postcardView}
                 />
-            }
-        </div>
-    )
+                <Form
+                    toggleView={toggleView}
+                    postcardView={postcardView}
+                    value={this.state.value} 
+                    handleChange={this.handleChange}
+                />
+                <MyCam 
+                    postcardView={postcardView}
+                />
+                {postcardView &&
+                    <Message
+                        choosenCam={choosenCam}
+                        value={value}
+                    />
+                }
+            </div>
+        );
+    }
 }
-
 export default SideBar;

@@ -2,11 +2,8 @@ import React, { Component } from 'react'
 import { config } from '../config'
 import './Form.css'
 
-class Form extends Component {
-      state = {
-        value: ''
-      };
 
+class Form extends Component {
       styles = {
         button: {
           border: `solid 2px ${config.colors.pinkMexican}`,
@@ -30,17 +27,35 @@ class Form extends Component {
           cursor: 'pointer',
           textAlign: 'center',
           position: 'absolute',
-          top: '5vh',
-          right: '5vw'
+          top: '10vh',
+          left: '10vw',
+        },
+        stamp1: {
+          borderRadius: '100%',
+          border: `solid 2px ${config.colors.pinkMexican}`,
+          position: 'absolute',
+          top: '10vh',
+          right: '10vw',
+          width: '7%',
+          cursor: 'pointer',
+          opacity: '0.65'
+        },
+        stamp2: {
+          borderRadius: '100%',
+          border: `solid 2px ${config.colors.pinkMexican}`,
+          position: 'absolute',
+          top: '10vh',
+          right: '18vw',
+          width: '7%',
+          cursor: 'pointer',
+          opacity: '0.60'
         }
       }
-
-      handleChange = event => {
-        this.setState({value: event.target.value});
-      }
-
+           
       render() {
-        const { toggleView, postcardView } = this.props;
+        const { toggleView, postcardView, handleChange, value } = this.props;
+        const facebook = require('../img/facebook.jpg')
+        const instagram = require('../img/INSTAGRAM_01.png')
 
         return (
           <>
@@ -49,8 +64,8 @@ class Form extends Component {
                 <label>
                   <textarea 
                     style={this.styles.input}
-                    value={this.state.value} 
-                    onChange={this.handleChange}
+                    value={value} 
+                    onChange={(event) => handleChange(event)}
                     placeholder={'Writte your message here... :-)'}
                   />
                 </label>
@@ -61,8 +76,14 @@ class Form extends Component {
               style={postcardView ? this.styles.cornerButton : this.styles.button}
               onClick={() => toggleView()}
             >
-              {postcardView ? "Back to map" : "Switch to postcard"}
+              {postcardView ? "Back to map" : "Previsualize your postcard"}
             </div>
+            {postcardView &&
+            <>
+              <img src={facebook} alt="facebook" style={this.styles.stamp1} />
+              <img src={instagram} alt="instagram" style={this.styles.stamp2} />
+            </>
+            }
           </>
         );
       }
