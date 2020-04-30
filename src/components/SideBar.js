@@ -1,34 +1,35 @@
-import React, {Component} from 'react';
+import React from 'react';
 import WindyCam from './WindyCam';
 import Form from './Form';
 import Message from './Message';
-import { render } from '@testing-library/react'
 
-     
 
 class SideBar extends React.Component {
-           state = {
-            value: ''
-          };  
+    state = {
+        value: ''
+    };  
 
-          styles = {
-            container: {
-                position: 'absolute',
-                height: '80vh',
-                width: postcardView ? '90vw' : '30vw',
-                margin: '0',
-                top: '10vh',
-                right: '5vw'
-            },
+    styles = {
+        container: {
+            position: 'absolute',
+            height: '80vh',
+            width: this.props.postcardView ? '90vw' : '30vw',
+            margin: '0',
+            top: '10vh',
+            right: '5vw'
+        },
+    };
         
    
     handleChange = event => {
         this.setState({value: event.target.value});
-      }
+    }
 
-      render() {
-         return (
-            <div style={styles.container}>
+    render() {
+        const { choosenCam, toggleView, postcardView } = this.props
+
+        return (
+            <div style={this.styles.container}>
                 <WindyCam
                     choosenCam={choosenCam}
                 />
@@ -39,9 +40,10 @@ class SideBar extends React.Component {
                     onChange={this.state.handleChange}
                 />
                 <Message 
-                handleChange= {this.state.message } />
+                    handleChange={this.state.message} 
+                />
             </div>
-    );
+        );
     }
 }
 
