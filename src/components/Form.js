@@ -35,7 +35,7 @@ class Form extends Component {
           border: `solid 2px ${config.colors.pinkMexican}`,
           position: 'absolute',
           top: '10vh',
-          right: '10vw',
+          right: '18vw',
           width: '7%',
           cursor: 'pointer',
           opacity: '0.65'
@@ -45,17 +45,26 @@ class Form extends Component {
           border: `solid 2px ${config.colors.pinkMexican}`,
           position: 'absolute',
           top: '10vh',
-          right: '18vw',
+          right: '26vw',
           width: '7%',
           cursor: 'pointer',
           opacity: '0.60'
-        }
-      }
+        },
+      stamp3: {
+        position: 'absolute',
+        top: '5vh',
+        right: '5vw',
+        width: '12%',
+        cursor: 'pointer',
+        opacity: '0.90'
+      },
+    }
            
       render() {
         const { toggleView, postcardView, handleChange, value } = this.props;
         const facebook = require('../img/facebook.jpg')
         const instagram = require('../img/INSTAGRAM_01.png')
+        const stamp = require('../img/stamp.png')
 
         return (
           <>
@@ -82,6 +91,7 @@ class Form extends Component {
             <>
               <img src={facebook} alt="facebook" style={this.styles.stamp1} />
               <img src={instagram} alt="instagram" style={this.styles.stamp2} />
+              <img src={stamp} alt="stamp" style={this.styles.stamp3} />
             </>
             }
           </>
