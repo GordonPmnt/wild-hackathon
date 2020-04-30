@@ -70,7 +70,6 @@ class MapContainer extends Component {
 
         return( postcardView ||
             <Map
-                style={this.styles.map}
                 containerStyle={this.styles.map}
                 google={this.props.google}
                 zoom={7}
@@ -86,8 +85,8 @@ class MapContainer extends Component {
                                 lng: cam.location.longitude
                             }}
                         icon={{
-                            url: 'https://img.icons8.com/plasticine/2x/marker.png',
-                            scaledSize: new this.props.google.maps.Size(64,64)
+                            url: 'https://images.getbento.com/accounts/434f2b7047292519f2ff31acf678374b/media/images/87861map-marker-rosa-mexicano.png',
+                            scaledSize: new this.props.google.maps.Size(40,40)
                         }}
                         onClick={() => this.handleClick(cam.id)}
                         // onMouseover={(props, marker, e) => this.handleMouseOver(props, marker, e)}

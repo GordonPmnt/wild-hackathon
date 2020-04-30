@@ -1,3 +1,7 @@
+.button {
+    background-color: white;
+}
+
 .button:hover {
     background-color: #E4007C;
     color: white;
