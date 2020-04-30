@@ -9,9 +9,9 @@ class SideBar extends React.Component {
     state = {
         value: ''
     };  
-
+    
     styles = {
-        container: {
+        side: {
             backgroundColor: 'rgba(255, 255, 255, 0.6)',
             padding: '2.5%',
             borderRadius: '12px',
@@ -32,7 +32,7 @@ class SideBar extends React.Component {
         const { choosenCam, toggleView, postcardView } = this.props
 
         return (
-            <div style={this.styles.container}>
+            <div style={postcardView ? this.styles.full : this.styles.side}>
                 <WindyCam
                     choosenCam={choosenCam}
                     postcardView={postcardView}
