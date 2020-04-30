@@ -57,6 +57,14 @@ class Form extends Component {
         width: '12%',
         opacity: '0.90'
       },
+      stamp4: {
+        position: 'absolute',
+        top: '10vh',
+        right: '5vw',
+        width: '13%',
+        opacity: '0.90',
+        zIndex: '1',
+      },
     }
            
       render() {
@@ -64,6 +72,7 @@ class Form extends Component {
         const facebook = require('../img/facebook.jpg')
         const instagram = require('../img/INSTAGRAM_01.png')
         const stamp = require('../img/stamp.png')
+        const rows = require('../img/rows.png')
 
         return (
           <>
@@ -91,6 +100,7 @@ class Form extends Component {
               <img className={"net"} src={facebook} alt="facebook" style={this.styles.stamp1} />
               <img className={"net"} src={instagram} alt="instagram" style={this.styles.stamp2} />
               <img src={stamp} alt="stamp" style={this.styles.stamp3} />
+              <img src={rows} alt="rows" style={this.styles.stamp4} />
             </>
             }
           </>
