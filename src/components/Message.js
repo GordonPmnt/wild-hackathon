@@ -1,18 +1,31 @@
 import React from 'react'
+import { config } from '../config'
 
-const Message = ({value}) => {
+
+const Message = ({ choosenCam, value }) => {
     const styles = {
+        h2: {
+            color: config.colors.pinkMexican
+        },
         message: {
-            width: "460px",
-            height: "140px",
-            border: "2px solid #e91e63",
+            backgroundColor: 'rgba(255, 255, 255, 0.6)',
+            width: "450px",
+            height: "500px",
             borderRadius: "5px",
-        }
-    }
+            position: 'absolute',
+            top: '17vh',
+            left: '10vw',
+            padding: '20px'
+        },
+    };
+    const { location } = choosenCam;
     
     return(
-        <div>  
-            <p style={styles.message}> {value} </p>
+        <div style={styles.message}> 
+            <h2 style={styles.h2}>Greetings from {location && location.city} !</h2>
+            <p>
+                {value}
+            </p>
         </div>
     );
 }

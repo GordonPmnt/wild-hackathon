@@ -25,8 +25,6 @@ const WindyCam = ({ choosenCam, postcardView }) => {
     const { id, location, player } = choosenCam
     const beach = require('../img/beach.jpg')
 
-    console.log('CAM', choosenCam)
-
     return (
         <>
         {choosenCam.player 

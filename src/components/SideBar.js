@@ -46,10 +46,12 @@ class SideBar extends React.Component {
                 <MyCam 
                     postcardView={postcardView}
                 />
-                <Message 
-                    handleChange={this.state.message} 
-                    value={this.state.value}
-                />
+                {postcardView &&
+                    <Message 
+                        handleChange={this.state.message} 
+                        value={this.state.value}
+                    />
+                }
             </div>
         );
     }
