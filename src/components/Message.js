@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Message = () => {
+const Message = ({value}) => {
     const styles = {
         message: {
             width: "460px",
@@ -12,7 +12,7 @@ const Message = () => {
     
     return(
         <div>  
-            <p style={styles.message}></p>
+            <p style={styles.message}> {value} </p>
         </div>
     );
 }
