@@ -2,15 +2,15 @@ import React from 'react'
 import { config } from '../config'
 
 
-const Message = ({ choosenCam }) => {
+const Message = ({ choosenCam, value }) => {
     const styles = {
         h2: {
             color: config.colors.pinkMexican
         },
         message: {
-            backgroundColor: 'rgba(255, 255, 255, 0.6)',
+            backgroundColor: 'rgba(255, 255, 255, 0.65)',
             width: "450px",
-            height: "500px",
+            minHeight: "250px",
             borderRadius: "5px",
             position: 'absolute',
             top: '17vh',
@@ -23,12 +23,8 @@ const Message = ({ choosenCam }) => {
     return(
         <div style={styles.message}> 
             <h2 style={styles.h2}>Greetings from {location && location.city} !</h2>
-            <p>
-                Hey guys ! I'm in holydays.
-                The weather is amazing ans we have a lot of fun.
-                Looking forward seeing you soon.
-                Love
-                Pete
+            <p className='message'>
+                {value}
             </p>
         </div>
     );
