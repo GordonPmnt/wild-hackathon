@@ -37,10 +37,11 @@ class SideBar extends React.Component {
                     toggleView={toggleView}
                     postcardView={postcardView}
                     value={this.state.value} 
-                    onChange={this.state.handleChange}
+                    handleChange={this.handleChange}
                 />
                 <Message 
                     handleChange={this.state.message} 
+                    value={this.state.value}
                 />
             </div>
         );

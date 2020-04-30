@@ -12,6 +12,7 @@ border: `solid 2px ${config.colors.pinkMexican}`
 
 
 class Form extends Component {
+
       styles = {
         button: {
           border: `solid 2px ${config.colors.pinkMexican}`,
@@ -23,15 +24,15 @@ class Form extends Component {
 
      
       render() {
-        const { toggleView, postcardView, value } = this.props;
+        const { toggleView, postcardView } = this.props;
         console.log(postcardView)
 
         return (
           <form>
             <label>
               <textarea style = {formStyle}
-                value={value} 
-                onChange={() => this.props.handleChange()}
+                value={this.props.value} 
+                onChange={(event) => this.props.handleChange(event)}
               />
             </label>
             <div style={this.styles.button}
@@ -40,6 +41,7 @@ class Form extends Component {
               {postcardView ? "Back to map" : "Switch to postcard"}
             </div>
           </form>
+         
         );
       }
     }
