@@ -12,6 +12,9 @@ class SideBar extends React.Component {
 
     styles = {
         container: {
+            backgroundColor: 'rgba(255, 255, 255, 0.6)',
+            padding: '2.5%',
+            borderRadius: '12px',
             position: 'absolute',
             height: '80vh',
             width: this.props.postcardView ? '90vw' : '30vw',
