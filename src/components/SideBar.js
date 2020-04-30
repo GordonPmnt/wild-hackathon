@@ -16,15 +16,14 @@ class SideBar extends React.Component {
             padding: '2.5%',
             borderRadius: '12px',
             position: 'absolute',
-            height: '80vh',
-            width: this.props.postcardView ? '90vw' : '30vw',
+            height: '80%',
+            width: '30vw',
             margin: '0',
             top: '10vh',
             right: '5vw'
         },
     };
         
-   
     handleChange = event => {
         this.setState({value: event.target.value});
     }
