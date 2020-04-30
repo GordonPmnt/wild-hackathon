@@ -18,7 +18,7 @@ class Form extends Component {
           backgroundColor: 'rgba(255, 255, 255, 0.5)',
           border: 'none',
           height: '150px',
-          width: '350px',
+          width: '100%',
         },
         cornerButton: {
           border: `solid 2px ${config.colors.pinkMexican}`,
