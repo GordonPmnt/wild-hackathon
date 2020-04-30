@@ -27,9 +27,9 @@ class Form extends Component {
           cursor: 'pointer',
           textAlign: 'center',
           position: 'absolute',
-          top: '5vh',
-          right: '5vw'
-        }
+          top: '10vh',
+          right: '5vw',
+        },
       }
 
      
