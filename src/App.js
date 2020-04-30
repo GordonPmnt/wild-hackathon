@@ -1,12 +1,28 @@
 import React from 'react';
-import './App.css';
+import PostCard from './components/PostCard';
 
-function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+
+class App extends React.Component {
+    state = {
+        postcardView: false,
+    }
+
+    toggleView = () => {
+        this.setState(prevState => ({
+            postcardView: !prevState.postcardView
+        }))
+    }
+
+    render() {
+        const { postcardView } = this.state;
+
+        return (
+            <PostCard
+                postcardView={postcardView}
+                toggleView={this.toggleView}
+            />
+        )
+    }
 }
 
 export default App;
