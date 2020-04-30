@@ -8,9 +8,9 @@ const Message = ({ choosenCam, value }) => {
             color: config.colors.pinkMexican
         },
         message: {
-            backgroundColor: 'rgba(255, 255, 255, 0.4)',
+            backgroundColor: 'rgba(255, 255, 255, 0.7)',
             width: "450px",
-            height: "500px",
+            minHeight: "250px",
             borderRadius: "5px",
             position: 'absolute',
             top: '17vh',
